@@ -6,6 +6,10 @@
   color: black;
 }
 
+body {
+  background-color: rgb(227, 222, 216);
+}
+
 .navigation {
   background-color: rgb(227, 222, 216);
   display: flex;
@@ -27,6 +31,103 @@
   justify-content: center;
   font-weight: bold;
   font-size: 13pt;
+}
+
+.wrapper {
+  background-color: black;
+  border: none;
+  width: 100%;
+  max-width: 1536px;
+  margin-inline: auto;
+  position: relative;
+  height: 60px;
+  margin-top: 78px;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+@keyframes scrollleft {
+  to {
+    left: -200px;
+  }
+}
+
+.item {
+  width: 300px;
+  height: 60px;
+  border-radius: 6px;
+  position: absolute;
+  left: max(calc(200px * 6), 100%);
+  animation-name: scrollleft;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.item1 {
+  animation-delay: calc(30s / 6 * (6 - 1) * -1);
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.item2 {
+  animation-delay: calc(30s / 6 * (6 - 2) * -1);
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.item3 {
+  animation-delay: calc(30s / 6 * (6 - 3) * -1);
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.item4 {
+  animation-delay: calc(30s / 6 * (6 - 4) * -1);
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.item5 {
+  animation-delay: calc(30s / 6 * (6 - 5) * -1);
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.item6 {
+  animation-delay: calc(30s / 6 * (6 - 6) * -1);
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
 }
 
 .btn-ylw {
@@ -86,7 +187,7 @@
 
 .container1 {
   background-color: rgb(227, 222, 216);
-  height: 750px;
+  height: 700px;
 }
 
 .container2 {
@@ -111,14 +212,39 @@
   height: 700px;
 }
 
+@keyframes appear1 {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes appear2 {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
 .home {
   display: flex;
   flex-direction: row;
-  padding: 80px 170px 0px 170px;
+  padding: 60px 170px 0px 170px;
   gap: 0;
 }
 
 .hero {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0;
   display: flex;
   flex-direction: row;
 }
@@ -136,7 +262,7 @@ span {
 
 .profile {
   background-color: rgb(236, 214, 71);
-  width: 500px;
+  width: 480px;
   border-radius: 50%;
   cursor: pointer;
   box-shadow: rgb(120, 120, 120) 7px 7px 9px;
@@ -168,6 +294,9 @@ span {
 }
 
 .box-skill {
+  animation: appear1 linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -242,6 +371,9 @@ span {
 }
 
 .box-ex {
+  animation: appear1 linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -276,6 +408,9 @@ span {
 }
 
 .box-ab {
+  animation: appear1 linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
   background-color: rgb(234, 233, 232);
   display: flex;
   flex-direction: column;
