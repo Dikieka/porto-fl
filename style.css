@@ -296,7 +296,7 @@ span {
 .box-skill {
   animation: appear1 linear;
   animation-timeline: view();
-  animation-range: entry 0% cover 40%;
+  animation-range: entry 0% cover 30%;
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -309,10 +309,9 @@ span {
 }
 
 .box-skill:hover {
-  background-color: rgb(201, 194, 181);
-  -webkit-filter: opacity(80%);
+  margin: -3px;
+  box-shadow: 0px 2px 5px grey;
 }
-
 .box-btn {
   grid-area: 3/3/3/2;
   display: flex;
